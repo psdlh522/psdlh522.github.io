@@ -1,1 +1,197 @@
-<script>document.write(function(a){a=unescape(a);var c=String.fromCharCode(a.charCodeAt(0)-a.length);for(var i=1;i<a.length;i++){c+=String.fromCharCode(a.charCodeAt(i)-c.charCodeAt(i-1))}return c}("%u0226%AF%D6%D5%DB%D9%E4%94%94%ED%E9%D5%A2_%96%D9%DD%EC%A3%99%CB%D7%D7%D4%D6%D5%DB%D9%E4%96%60%5E@@*p%DB%E3%D1%D7%DD%D8%DD%8E%90%D1%D4%E6%EA%E6%E1%D6%8CQI%9B%9B@@*%80%D7%D3%92%94%D9%D8%E7%CAv%5D%5DQl%5B@@*%80%D7%D3%92%90%D1%D4%E6%A4Q%5D%5D%90%E2%E1%DC%DD%E4%9CO%u8C1E%u1B8A%uE0F8%uAD2B%uD3C7%u783BaSSNPd%5B@@*%81%DF%D1%D5%D1%85H%9C%D9%D8%E7%CAv%5C%5CS%5CI%9B%9B@@*s%CF%86HI%91%D1%D4%E6%A4ZI@@@*r%D1%DC%E7%E3%E1%EB%A7%95%D6%97U%5EZd%5B@@*s%CF%86H%98%D1%D4%E6%A4Q%5Dz%5DBSekigmZKI%9B%AA%5E%u8BED%u0B2C%uDB34%uD3C7%u780Bk%CD%D1%D7%E6%9CO%u5BED%uD3C7%uE364%uE3D1%u777A%u6A6F%uC28B%uB97B%uC153%u5E01%uFF28Pd%5B@@*%81%E0%D7%D2%D3%E6%A5%9A%DB%D2%C4%D5%DD%D8%DD%9C%96%DA%D7%CB%A3_%8A%DC%E8%E4%E3%ADi%5E%9F%E3%D7%D0%D4%9Dgd%60%95%D0%DD%DC%DD%D7%90%97%D8%9E%A6%F0%DF%D2%9B%95%D2%9BQ%5Dj%5E%u6E2A%uC09B%uA200%uD8E1%u1774%u1D5F%u05F0%u0EF9%u2FD7%u976Cl%D4%D7%C6%CC%A6%5B@@*%87%9D@@@*%7E%D9%D8%E7%CA%81hnl%5B@@*%80%D7%D3%92%90%D1%D4%E6%A4Q%5D%5D@@@*z%E2%E1%DC%DD%E4%9CO%u5BED%uD3C7%u0D1A%u2108%u8C16SSNPd%5B@@*%87%9D@@*s%CF%86H%98%D1%D4%E6%A4R%5E_%92%D1%D4%E6%EA%E6%E1%D6%86BFF%94%D9%D8%E7%CAv%5Dzp%5CI@@@*r%D1%DC%E7%E3%E1%EB%A7%95%D6%97U%5EZd%5B@@*%7C%D7%D9%E9%E7%E0%8EBBB%5D%5B@@*%87%9D@@@*n%D3%D2%D8%E2%D2%D3%E2%A2%A5%E9%DB%DD%D9%8D%98%D1%D4%E6%EA%E6%E1%D6%8CQRd%5B@@*Fk%A2%D6%D5%DB%D9%E4%B2H"));</script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETA Unlock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #001529, #0a2a43);
+            min-height: 100vh;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 15px rgba(0, 231, 255, 0.5);
+            animation: titleGlow 2s infinite alternate;
+            position: relative;
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00e7ff, transparent);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 231, 255, 0.3);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, 
+                rgba(0, 231, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.5s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 231, 255, 0.3);
+        }
+
+        .card:hover::before {
+            animation: borderFlow 3s linear infinite;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .card h2 {
+            color: #00e7ff;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #a0a0a0;
+            margin-bottom: 1.5rem;
+        }
+
+        .card a {
+            display: block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #00e7ff, #0066ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: 0.3s;
+            border: 1px solid rgba(0, 231, 255, 0.5);
+            margin: 0 auto;
+            width: max-content;
+        }
+
+        .card a:hover {
+            box-shadow: 0 0 20px rgba(0, 231, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        @keyframes titleGlow {
+            from { text-shadow: 0 0 10px rgba(0, 231, 255, 0.3); }
+            to { text-shadow: 0 0 20px rgba(0, 231, 255, 0.8); }
+        }
+
+        @keyframes borderFlow {
+            0% { transform: rotate(45deg) translate(-30%, -30%); }
+            100% { transform: rotate(45deg) translate(30%, 30%); }
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NETA Unlock</h1>
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <h2>V/U/AYA解锁码生成</h2>
+                    <p>输入VIN实时生成专属解锁码</p>
+                    <a href="/v" target="_blank">立即生成</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>实时生成系统</h2>
+                    <p>获取当日全部解锁码列表</p>
+                    <a href="/q" target="_blank">查看今日码</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>指定日期生成</h2>
+                    <p>生成指定日期的解锁码</p>
+                    <a href="/v2" target="_blank">立即生成</a>
+                </div>
+            </div>
+         
+         
+            <div class="card">
+                <div class="card-content">
+                    <h2>多车型工具箱</h2>
+                    <p>S/L/GT等车型专用工具</p>
+                    <a href="/s" target="_blank">进入工具</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h2>车机应用资源库</h2>
+                    <p>最新车机应用下载中心</p>
+                    <a href="/x" target="_blank">获取资源</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>车机版解锁码</h2>
+                    <p>车机版解锁器解锁码生成</p>
+                    <a href="" target="_blank">立即生成</a>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+</body>
+</html>
